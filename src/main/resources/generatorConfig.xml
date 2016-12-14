@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry
+		location="E:\maven_repository\repository\mysql\mysql-connector-java\5.1.18\mysql-connector-java-5.1.18.jar" />
+	<context id="context1">
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/qizaodian?autoReconnect=true&amp;characterEncoding=UTF-8"
+			userId="qizaodian" password="qizaodian" />
+		<javaModelGenerator targetPackage="com.qizaodian.mybatis.entity"
+			targetProject="qizaodian/src/main/java" />
+		<sqlMapGenerator targetPackage="com.qizaodian.mybatis.mapper"
+			targetProject="qizaodian/src/main/java" />
+		<javaClientGenerator targetPackage="com.qizaodian.mybatis.mapper"
+			targetProject="qizaodian/src/main/java" type="XMLMAPPER" />
+
+
+		<table tableName="article" domainObjectName="ArticleInfo">
+			<generatedKey column="article_id" sqlStatement="SELECT LAST_INSERT_ID()"
+				identity="true" type="post" />
+		</table>
+
+	</context>
+</generatorConfiguration>

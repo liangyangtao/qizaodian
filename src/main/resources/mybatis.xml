@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE configuration   
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="ArticleInfo" type="com.qizaodian.mybatis.entity.ArticleInfo" />
+	</typeAliases>
+	<!--数据源配置 这块用 BD2数据库 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="jdbc" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/qizaodian" />
+				<property name="username" value="qizaodian" />
+				<property name="password" value="qizaodian" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<!--userMapper.xml装载进来 同等于把“dao”的实现装载进来 -->
+		<mapper resource="com/qizaodian/mybatis/mapper/ArticleInfoMapper.xml" />
+
+	</mappers>
+</configuration> 
